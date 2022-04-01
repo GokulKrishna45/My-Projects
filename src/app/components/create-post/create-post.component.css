@@ -1,0 +1,54 @@
+
+.form-group{
+  margin-top:10px
+}
+
+
+.editor-tag {
+  cursor: text;
+  font-size: 16px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  background: white;
+  border: 1px #cccccc solid;
+}
+
+.tag-item {
+  line-height: 20px;
+  border-radius: 14px;
+  height: 20px;
+  font-size: 14px;
+  display: inline-block;
+  background: lightgrey;
+  padding-left: 5px;
+}
+
+.remove-tag {
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+
+.tag-item:not(:first-child) {
+  margin-left: 5px;
+}
+
+input {
+  margin: 0;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.heading {
+  margin: 20px;
+  text-align: center;
+}
+.create-btn {
+  display: flex;
+  justify-content: center;
+}
+.error-text{
+  color:red
+}

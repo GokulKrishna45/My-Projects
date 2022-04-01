@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="heading">
+    <div class='btn-toolbar pull-right'>
+      <div *ngIf="loggedInData" class="logout-btn">
+        <button class="btn btn-secondary btn-sm" (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+    <h2>View Posts</h2>
+  </div>
+  <div *ngIf="loggedInData.permission=='all'" class="create-btn"><button class="btn btn-secondary btn-lg"
+      (click)="createPost()">Create
+      Post</button></div>
+  <table class="table tbl">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Post</th>
+        <th scope="col">Created at</th>
+      </tr>
+    </thead>
+    <!-- <ng-container > -->
+    <tr *ngFor="let post of posts|slice:0:show;let i= index">
+      <td>{{i+1}}</td>
+      <td>{{post.text}}</td>
+      <td>{{post.created_at}}</td>
+    </tr>
+    <!-- </ng-container> -->
+
+  </table>
+  <button *ngIf="show<posts.length" (click)="showMore()" class="btn btn-secondary btn-lg">Load More</button>
+</div>

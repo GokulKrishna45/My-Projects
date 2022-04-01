@@ -1,0 +1,23 @@
+<div class="container">
+  <!-- <div class="logo">Agent Q Dashboard</div> -->
+  <div class="login-item">
+    <form [formGroup]="loginForm" class="form form-login" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <label class="user" for="username"><span class="hidden">Username</span></label>
+        <input id="username" type="text" formControlName="username" class="form-input" placeholder="Username" required>
+      </div>
+      <div *ngIf="!loginForm.get('username')?.valid&&isSubmitted" class="error-text">*Please fill this field</div>
+
+      <div class="form-field">
+        <label class="lock" for="password"><span class="hidden">Password</span></label>
+        <input id="password" type="password" formControlName="password" class="form-input" placeholder="Password"
+          required>
+      </div>
+      <div *ngIf="!isValid" class="error-text">*Invalid Credentails</div>
+
+      <div class="form-field">
+        <input type="submit" value="Log in">
+      </div>
+    </form>
+  </div>
+</div>

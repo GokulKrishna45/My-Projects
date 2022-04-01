@@ -1,0 +1,30 @@
+[
+    {
+        "userId": 1,
+        "firstName": "Melvin",
+        "user": "melvin",
+        "password": "123456",
+        "permission": "read"
+    },
+    {
+        "userId": 2,
+        "firstName": "Kevin",
+        "user": "kevin",
+        "password": "123456",
+        "permission": "write"
+    },
+    {
+        "userId": 3,
+        "firstName": "George",
+        "user": "george",
+        "password": "123456",
+        "permission": "all"
+    },
+    {
+        "userId": 4,
+        "firstName": "Samson",
+        "user": "sam",
+        "password": "123456",
+        "permission": "read"
+    }
+]

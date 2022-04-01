@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="heading">
+    <div class='btn-toolbar pull-right'>
+      <div *ngIf="loggedInData" class="logout-btn">
+        <button class="btn btn-secondary btn-sm" (click)="onLogout()" >Logout</button>
+      </div>
+    </div>
+    <h2>Create Post</h2>
+  </div>
+  <div class="login-item">
+    <form [formGroup]="postForm" class="form form-post" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Text</label>
+        <textarea class="form-control" formControlName="name" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <span *ngIf="!postForm.get('name')?.valid&&isSubmitted" class="error-text">*Please fill this field</span>
+      </div>
+
+      <div class="form-group">
+        <span><label for="exampleFormControlTextarea1">Tags</label></span>
+        <span class="note">
+          <p>*Please use comma or space after each tag</p>
+        </span>
+
+        <div class="editor-tag" (click)="focusTagInput()">
+          <span class="tag-item" *ngFor="let tag of tags">
+            {{tag}}
+            <span class="remove-tag" (click)="removeTag(tag)">×</span>
+          </span>
+          <input placeholder="Tags" #tagInput type="text" class="input-tag" (keyup)="onKeyUp($event)"
+            formControlName="tag">
+        </div>
+        <span *ngIf="this.tags.length<=0&&isSubmitted" class="error-text">*Please fill this field</span>
+
+      </div>
+
+      <div class="create-btn form-group">
+        <button type="submit" class="btn btn-secondary btn-lg">Post</button>
+      </div>
+    </form>
+  </div>
+</div>
